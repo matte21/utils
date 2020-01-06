@@ -16,6 +16,8 @@ limitations under the License.
 
 package buffer
 
+import "fmt"
+
 // RingGrowing is a growing ring buffer.
 // Not thread safe.
 type RingGrowing struct {
@@ -27,6 +29,10 @@ type RingGrowing struct {
 
 // NewRingGrowing constructs a new RingGrowing instance with provided parameters.
 func NewRingGrowing(initialSize int) *RingGrowing {
+
+	//! REMOVE AFTER TESTS
+	fmt.Println("If you see this test print it means the modified version of the ring buffer is being used.")
+
 	return &RingGrowing{
 		data: make([]interface{}, initialSize),
 		n:    initialSize,
